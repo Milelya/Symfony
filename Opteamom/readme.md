@@ -1,4 +1,3 @@
-#Opteamom
-My first symfony website used to track my days
-Use Symfony,AJAX, google charts
+# Opteamom
+My first symfony website used to track my days. It use Symfony, AJAX and google charts
   
