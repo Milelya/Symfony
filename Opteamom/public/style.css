@@ -1,0 +1,205 @@
+:root {
+    --COLOR-PRIMARY: #1F4287;
+    --COLOR-SECONDARY: #278EA5;
+    --COLOR-PASSIVE: #071E3D;
+    --COLOR-ACTIVE: #21E6C1;
+    --COLOR-TEXT: #FFFFFF;
+}
+
+html {
+    font-family: 'Changa', sans-serif;
+    background: linear-gradient(var(--COLOR-PRIMARY), var(--COLOR-SECONDARY));
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: var(--COLOR-TEXT);
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+.inactive {
+    display: none;
+    z-index: -1;
+}
+
+.login-form {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    text-align: center;
+    color: var(--COLOR-TEXT);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 1.5s cubic-bezier(0, .64, .44, 1.2) slidein;
+}
+
+.form {
+    width: 30%;
+    min-width: 300px;
+    height: 40%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #071E3D;
+    border-radius: 40px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+}
+
+.modal-form {
+    border-radius: 5px;
+    width: 80%;
+    height: 15%;
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+.submit-btn {
+    width: 40%;
+    height: 20%;
+    background: var(--COLOR-ACTIVE);
+    border: none;
+    border-radius: 17px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+    color: var(--COLOR-TEXT);
+    font-size: 30px;
+    font-family: 'Changa', sans-serif;
+    transition: linear .2s;
+    background: var(--COLOR-ACTIVE);
+}
+
+.submit-btn:hover {
+    background: white;
+    color: var(--COLOR-PASSIVE);
+}
+
+h1 {
+    margin: 0px;
+}
+
+.nav {
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: var(--COLOR-TEXT);
+    padding: 15px 25px;
+    transition: linear .5s;
+    border-radius: 15px;
+    border: 2px solid var(--COLOR-TEXT);
+}
+
+.nav:hover {
+    background: var(--COLOR-ACTIVE);
+}
+
+.nav:focus {
+    background: var(--COLOR-SECONDARY);
+}
+
+.content {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.home-description {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    letter-spacing: .1rem;
+}
+
+.description-1 {
+    margin-bottom: 50px;
+}
+
+.display-example {
+    display: none;
+}
+
+.btn-primary {
+    background: var(--COLOR-ACTIVE);
+    height: 70px;
+    width: 280px;
+    border: none;
+    border-radius: 17px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+    color: var(--COLOR-TEXT);
+    font-size: 30px;
+    font-family: 'Changa', sans-serif;
+    transition: linear .2s;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--COLOR-PASSIVE);
+    transform: scale(1.2);
+}
+
+@media (min-width: 850px) {
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    h2 {
+        font-size: 25px;
+    }
+    .nav {
+        font-size: 20px;
+        right: 70px;
+    }
+    .content {
+        text-align: right;
+        margin-right: 50px;
+        margin-top: 70px;
+    }
+    .home-description {
+        margin-top: 150px;
+        margin-bottom: 130px;
+        letter-spacing: .2rem;
+    }
+    .description-1 {
+        margin-bottom: 110px;
+    }
+    .display-example {
+        display: block;
+        min-width: 320px;
+        width: 320px;
+        height: 568px;
+        background: white;
+        margin-left: 50px;
+        margin-right: 40px;
+        margin-top: 130px;
+        box-shadow: 6px 6px 15px rgba(0, 0, 0, .3);
+        border: 4px solid var(--COLOR-TEXT);
+        background: linear-gradient(var(--COLOR-PRIMARY), var(--COLOR-SECONDARY));
+        background-image: url("/opteamomPreview.png");
+        background-size: contain;
+        border-radius: 6px;
+        transition: linear .5s;
+    }
+    .display-example:hover {
+        transform: scale(1.1);
+        box-shadow: 6px 6px 15px rgba(0, 0, 0, 1);
+    }
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(-600px);
+    }
+}

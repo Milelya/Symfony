@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<header>
+    <nav>
+        <div class="menu-general">
+            <h1>Opteamom</h1>
+            <a class="nav-back" href="{{path('app_login')}}">Home</a>
+        </div>
+        <div class="menu-item inactive" id='menuItem'>
+            <a class="" href="{{path('app_login')}}">Home</a>
+        </div>
+    </nav>
+</header>
+<hr>
+
+    {{ form_start(registrationForm,{'attr':{'class':"form"}})}}
+        {{ form_row(registrationForm.email,{'attr':{'class':"modal-form"}})}}
+        {{ form_row(registrationForm.plainPassword.first,{'attr':{'class':"modal-form"}})}}
+        {{ form_row(registrationForm.plainPassword.second,{'attr':{'class':"modal-form"}})}}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button class="submit-btn form-group">Register</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}
+
+
+

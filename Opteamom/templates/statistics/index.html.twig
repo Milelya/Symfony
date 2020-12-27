@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Opteamom{% endblock %}
+
+{% block body %}
+
+<header>
+    <nav>
+        <div class="menu-general">
+            <h1>Opteamom</h1>
+            <button class="nav" id="navMenu">Menu</button>
+        </div>
+        <div class="menu-item inactive" id='menuItem'>
+            <a class="" href="{{ path('main') }}">Summary</a>
+            <a class="" href="{{ path('statistics') }}">Statistics</a>
+            <a class="" href="{{ path('app_logout') }}">Log out</a>
+        </div>
+    </nav>
+</header>
+<hr>
+
+<body>
+    <main>
+        <section class="section-day-detail" id='sectionDayDetail'>
+            <h2 class="title-center">Statistics</h2>
+            <div class="gridContainer">
+                <a class="grid-link" href="{{ path('week_resume') }}">
+                    <h2>Week Resume</h2>
+                </a>
+                <a class="grid-link" href="{{ path('month_resume') }}">
+                    <h2>Month Resume</h2>
+                </a>
+                <a class="grid-link" href="{{ path('year_resume') }}">
+                    <h2>Year Resume</h2>
+                </a>
+                <a class="grid-link" href="{{ path('alltime_resume') }}">
+                    <h2>All time Resume</h2>
+                </a>
+                    
+            </div>
+        </section>
+    </main>
+    
+    
+</body>
+{% endblock %}

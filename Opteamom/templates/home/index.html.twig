@@ -1,0 +1,47 @@
+{% extends 'home.html.twig' %}
+
+
+{% block title %}Opteamom{% endblock %}
+
+{% block body %}
+
+    
+    <header>
+        <button class="nav" id="loginBtn">Log-in</button>
+        <div class="inactive" id='loginForm'>
+            <form class="form">
+
+                <input type="email" class="modal-form" id="InputEmail" placeholder="Enter email">
+
+
+                <input type="password" class="modal-form" id="InputPassword" placeholder="Password">
+
+                <button type="submit" class="submit-btn form-group">Connect</button>
+            </form>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <h1 class="home-title">Opteamom</h1>
+            <div class="home-description">
+                <h2 class="description-1">Improve your efficiency</h2>
+                <h2 class="description-2">Track your days and optimise your time</h2>
+            </div>
+            <button class="btn-primary" id="createAccountBtn">Create an account</button>
+        </div>
+        <div class="display-example"></div>
+
+    </main>
+    <div class="inactive" id='createAccountForm'>
+        <form class="form">
+            <input type="email" class="modal-form" id="InputEmail" placeholder="Enter email">
+            <input type="password" class="modal-form" id="InputPassword" placeholder="Password">
+            <input type="password" class="modal-form" id="InputPasswordVerify" placeholder="Confirm password">
+            <button type="submit" class="submit-btn form-group">Create</button>
+            
+        </form>
+    </div>
+
+    <script src=app.js></script>
+
+{% endblock %}

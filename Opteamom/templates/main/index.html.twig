@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Opteamom{% endblock %}
+
+{% block body %}
+
+<header>
+    <nav>
+        <div class="menu-general">
+            <h1>Opteamom</h1>
+            <button class="nav" id="navMenu">Menu</button>
+        </div>
+        <div class="menu-item inactive" id='menuItem'>
+            <a class="" href="{{ path('main') }}">Summary</a>
+            <a class="" href="{{ path('statistics') }}">Statistics</a>
+            <a class="" href="{{ path('app_logout') }}">Log out</a>
+        </div>
+    </nav>
+</header>
+<hr>
+
+<body>
+    <main>
+        <div id="activitySuccess" class="inactive"></div>
+        <div class="content">
+            <section class="section-block">
+                <button class="btn-primary" id="addActivityBtn">Add an activity</button>
+                <div class="resumeContainer inactive" id='createActivityForm'>
+                    <form class="form" id="addActivityForm">
+                        <h2>Add an activity</h2>
+                        <input type="text" class="modal-form" id="activityName" placeholder="Activity name">
+
+                    </form>
+                    <div class="btn-form">
+                        <button class="cancel-btn" id="cancelBtn">Cancel</button>
+                        <a href='{{path('create_activity')}}' id="startTimerLink" class="submit-btn">Start timer</a>
+                    </div>
+                </div>
+                <div class="resumeContainer">
+                    
+                    {% for activity in dayActivityPrimary|slice(0,3) %}
+                        <div class="viewThing viewThing-primary" style="width:{{activity.percent}}%">
+                            <h3>{{activity.activityName}}</h3>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="btn-secondary" id="showDayDetail">Show my day detail</button>
+            </section>
+            <section class="section-day-detail inactive" id='sectionDayDetail'>
+                <h2>Day detail:</h2>
+                <div class="resumeContainer">
+          		
+                    {% for activity in dayActivityPrimary %}
+                        <div class="viewThing viewThing-primary" style="width:{{activity.percent}}%">
+                            <h3>{{activity.activityName}} | {{activity.duration}}</h3>
+                        </div>
+                    {% endfor %}
+                
+                    {% for activity in dayActivitySecondary %}
+                        <div class="viewThing viewThing-secondary" style="width:{{activity.percent}}%">
+                            <h3>{{activity.activityName}} | {{activity.duration}}</h3>
+                        </div>
+                    {% endfor %}
+                
+                    {% for activity in dayActivityTertiary %}
+                        <div class="viewThing viewThing-tertiary" style="width:{{activity.percent}}%">
+                            <h3>{{activity.activityName}} | {{activity.duration}}</h3>
+                        </div>
+                    {% endfor %}
+                
+                {% if not dayActivityPrimary %}
+                    <div class="viewThing viewThing-primary">
+                        <h3>You havent registered any activity today</h3>
+                    </div>
+                {% endif %}
+                    
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <script src=activity.js></script>
+    
+</body>
+{% endblock %}

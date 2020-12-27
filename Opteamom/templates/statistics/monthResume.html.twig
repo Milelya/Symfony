@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Opteamom{% endblock %}
+
+{% block body %}
+
+<header>
+    <nav>
+        <div class="menu-general">
+            <h1>Opteamom</h1>
+            <button class="nav" id="navMenu">Menu</button>
+        </div>
+        <div class="menu-item inactive" id='menuItem'>
+            <a class="" href="{{ path('main') }}">Summary</a>
+            <a class="" href="{{ path('statistics') }}">Statistics</a>
+            <a class="" href="{{ path('app_logout') }}">Log out</a>
+        </div>
+    </nav>
+</header>
+<hr>
+
+<body>
+    <main>
+        <section class="section-resume-detail" id='sectionDayDetail'>
+            <a href="{{ path('statistics') }}"> < Retour</a>
+            <h2 class="title-center">Month Resume</h2>
+            <div class="resumeContainer">
+          		{% for activity in activityPrimary %}
+                    <div class="viewThing viewThing-primary" style="width:{{activity.percent}}%">
+                        <h3>{{activity.activityName}} | {{activity.duration}}</h3>
+                    </div>
+                {% endfor %}
+                {% for activity in activitySecondary %}
+                    <div class="viewThing viewThing-secondary" style="width:{{activity.percent}}%">
+                        <h3>{{activity.activityName}} | {{activity.duration}}</h3>
+                    </div>
+                {% endfor %}
+                {% for activity in activityTertiary %}
+                    <div class="viewThing viewThing-tertiary" style="width:{{activity.percent}}%">
+                        <h3>{{activity.activityName}} | {{activity.duration}}</h3>
+                    </div>
+                {% endfor %}
+                {% if not activityPrimary %}
+                    <div class="viewThing viewThing-primary">
+                        <h3>You havent registered any activity this week</h3>
+                    </div>
+                {% endif %} 
+            </div>
+        </section>
+    </main>
+    
+    
+</body>
+{% endblock %}
